@@ -23,7 +23,7 @@ relaychain:
 
 # Parachain Configuration
 parachains:
-- image: litentry/litentry-parachain:latest
+- image: litentry/litentry-parachain:drop3
   chain:
     base: dev
   id: 2013
