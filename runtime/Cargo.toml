@@ -9,7 +9,7 @@ codec = { package = "parity-scale-codec", version = "2.3.0", default-features = 
 hex-literal = { version = '0.3.4', optional = true }
 log = { version = "0.4.14", default-features = false }
 scale-info = { version = "1.0.0", default-features = false, features = ["derive"] }
-serde = { version = "1.0.130", optional = true, features = ["derive"] }
+serde = { version = "1.0.133", optional = true, features = ["derive"] }
 
 primitives = { path = "../primitives", default-features = false }
 
@@ -78,6 +78,9 @@ xcm-executor = { git = "https://github.com/paritytech/polkadot", default-feature
 frame-benchmarking = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "polkadot-v0.9.13", optional = true }
 frame-system-benchmarking = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "polkadot-v0.9.13", optional = true }
 
+# Litentry pallets
+pallet-drop3 = { path = "../pallets/drop3", default-features = false }
+
 [dev-dependencies]
 hex-literal = "0.3.4"
 smallvec = "1.7.0"
@@ -112,6 +115,7 @@ std = [
 	"pallet-balances/std",
 	"pallet-collective/std",
 	"pallet-democracy/std",
+	"pallet-drop3/std",
 	"pallet-membership/std",
 	"pallet-multisig/std",
 	"pallet-proxy/std",
@@ -144,7 +148,7 @@ std = [
 
 runtime-benchmarks = [
 	"hex-literal",
-	"frame-benchmarking",
+	"frame-benchmarking/runtime-benchmarks",
 	"frame-support/runtime-benchmarks",
 	"frame-system-benchmarking",
 	"frame-system/runtime-benchmarks",
@@ -152,6 +156,7 @@ runtime-benchmarks = [
 	"pallet-collator-selection/runtime-benchmarks",
 	"pallet-collective/runtime-benchmarks",
 	"pallet-democracy/runtime-benchmarks",
+	"pallet-drop3/runtime-benchmarks",
 	"pallet-membership/runtime-benchmarks",
 	"pallet-multisig/runtime-benchmarks",
 	"pallet-proxy/runtime-benchmarks",
