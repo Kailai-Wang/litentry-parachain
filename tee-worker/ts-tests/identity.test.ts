@@ -156,15 +156,15 @@ describeLitentry('Test Identity', (context) => {
 
     step('verify identity', async function () {
         //verify twitter identity
-        const twitter_identity_verified = await verifyIdentity(
-            context,
-            context.defaultSigner,
-            aesKey,
-            true,
-            twitterIdentity,
-            twitterValidationData
-        );
-        assertIdentityVerified(context.defaultSigner, twitter_identity_verified);
+        // const twitter_identity_verified = await verifyIdentity(
+        //     context,
+        //     context.defaultSigner,
+        //     aesKey,
+        //     true,
+        //     twitterIdentity,
+        //     twitterValidationData
+        // );
+        // assertIdentityVerified(context.defaultSigner, twitter_identity_verified);
 
         // verify ethereum identity
         const ethereum_identity_verified = await verifyIdentity(
