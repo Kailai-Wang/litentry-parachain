@@ -90,8 +90,8 @@ jobs:
 
       - name: Re-name Image Tags
         run: |
-          docker tag integritee-worker-${{ matrix.flavor_id }}-${{ github.sha }} ${{ env.WORKER_IMAGE_TAG }}
-          docker tag integritee-cli-client-${{ matrix.flavor_id }}-${{ github.sha }} ${{ env.CLIENT_IMAGE_TAG }}
+          docker tag integritee-worker-sidechain-0ab04e0ed0791ce34c55498f6b2626078a6a08f6 ${{ env.WORKER_IMAGE_TAG }}
+          docker tag integritee-cli-client-sidechain-0ab04e0ed0791ce34c55498f6b2626078a6a08f6 ${{ env.CLIENT_IMAGE_TAG }}
           docker images --all
 
       - name: Generate parachain artefacts
@@ -127,7 +127,6 @@ jobs:
         if: always()
         uses: jwalton/gh-docker-logs@v2
         with:
-          #images: '${{ env.WORKER_IMAGE_TAG }},${{ env.CLIENT_IMAGE_TAG }}'
           tail: all
           dest: ${{ env.UPLOAD_DOWNLOAD_DIR_PREFIX }}/${{ env.LOG_DIR }}
 
